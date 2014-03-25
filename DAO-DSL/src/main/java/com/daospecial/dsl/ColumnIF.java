@@ -1,6 +1,6 @@
 package com.daospecial.dsl;
 
-public interface ColumnIF {
+public interface ColumnIF  extends AttributeIF {
 	
 	public ColumnIF sum();
 	public ColumnIF ave();

@@ -57,12 +57,12 @@ public abstract class BaseTable implements TableIF {
 		return null;
 	}
 
-	public TableIF addValue(List<String> values) {
+	public TableIF addValue(List<AttributeIF> values) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public TableIF addValue(String value) {
+	public TableIF addValue(AttributeIF value) {
 		// TODO Auto-generated method stub
 		return null;
 	}

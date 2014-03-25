@@ -1,15 +1,21 @@
 package com.daospecial.dsl.condition;
 
+import com.daospecial.dsl.AttributeIF;
 import com.daospecial.dsl.BaseCondition;
+import com.daospecial.dsl.attribute.StringAttribute;
 
 public class Like extends BaseCondition {
 
 
-	public Like(String attr1, String attr2) {
+	public Like(AttributeIF attr1, AttributeIF attr2) {
 		super(attr1, attr2);
 
 	}
 
+	public Like(String attrStr1, String attrStr2) {
+		super(new StringAttribute(attrStr1), new StringAttribute(attrStr2));
+
+	}
 
 	public String toSQL() {
 		StringBuilder sb = new StringBuilder();

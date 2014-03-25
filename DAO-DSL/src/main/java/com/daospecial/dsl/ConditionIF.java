@@ -8,9 +8,9 @@ public interface ConditionIF extends SQLElement {
 	public ConditionIF and(ConditionIF cond);
 	public ConditionIF or(ConditionIF cond);
 	public ConditionIF addAttribute(ColumnIF col);
-	public ConditionIF addAttribute(String value);
+	public ConditionIF addAttribute(AttributeIF value);
 	
-	public List<String> getAttrs();
+	public List<AttributeIF> getAttrs();
 	public String getOperator();
 	public void setOperator(String op);
 	public ConditionIF getNext();

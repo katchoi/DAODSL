@@ -1,13 +1,20 @@
 package com.daospecial.dsl.condition;
 
+import com.daospecial.dsl.AttributeIF;
 import com.daospecial.dsl.BaseCondition;
+import com.daospecial.dsl.attribute.StringAttribute;
 
 public class Equals extends BaseCondition {
 
 	
 	
-	public Equals(String attr1, String attr2) {
+	public Equals(AttributeIF attr1, AttributeIF attr2) {
 		super(attr1, attr2);
+
+	}
+	
+	public Equals(String attrStr1, String attrStr2) {
+		super(new StringAttribute(attrStr1), new StringAttribute(attrStr2));
 
 	}
 
@@ -24,6 +31,8 @@ public class Equals extends BaseCondition {
 	public String toString() {
 		return "Equals:" + getAttrs() + " operator: " + getOperator() + " next: " + getNext();
 	}
+
+
 	
 	
 	

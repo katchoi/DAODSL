@@ -5,14 +5,14 @@ import java.util.List;
 
 public abstract class BaseCondition implements ConditionIF {
 
-	private ArrayList<String> attrs;
+	private ArrayList<AttributeIF> attrs;
 	private String operator;
 	private ConditionIF next;
 	
 
-	public BaseCondition(String attr1, String attr2) {
+	public BaseCondition(AttributeIF attr1, AttributeIF attr2) {
 		super();
-		this.attrs = new ArrayList<String>();
+		this.attrs = new ArrayList<AttributeIF>();
 		attrs.add(attr1);
 		attrs.add(attr2);
 		next = null;
@@ -39,11 +39,11 @@ public abstract class BaseCondition implements ConditionIF {
 	}
 
 	public ConditionIF addAttribute(ColumnIF col) {
-		attrs.add(col.toString());
+		attrs.add(col);
 		return this;
 	}
 
-	public ConditionIF addAttribute(String value) {
+	public ConditionIF addAttribute(AttributeIF value) {
 		attrs.add(value);
 		return this;
 	}
@@ -55,7 +55,7 @@ public abstract class BaseCondition implements ConditionIF {
 		return operator;
 	}
 
-	public List<String> getAttrs() {
+	public List<AttributeIF> getAttrs() {
 		return attrs;
 	}
 

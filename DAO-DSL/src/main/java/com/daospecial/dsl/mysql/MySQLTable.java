@@ -6,6 +6,7 @@ import com.daospecial.dsl.BaseTable;
 import com.daospecial.dsl.TableIF;
 import com.daospecial.dsl.condition.Equals;
 import com.daospecial.dsl.condition.In;
+import com.daospecial.dsl.condition.Like;
 
 public class MySQLTable extends BaseTable {
 	
@@ -44,7 +45,7 @@ public class MySQLTable extends BaseTable {
 		.addColumn("c2")
 		.addColumn("c3")
 		.where()
-		.addCondition(new Equals("c1", "'Kat'").and(new In("c2", "('man', 'woman')")));
+		.addCondition(new Equals("c1", "'Kat'").and(new In("c2", "('man', 'woman')").or(new Like("c3", "'%anna%'"))));
 		System.out.println(table.toSQL());
 
 	}

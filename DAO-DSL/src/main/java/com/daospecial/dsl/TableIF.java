@@ -18,8 +18,8 @@ public interface TableIF extends SQLElement {
 	public ResultSet getResultSet();
 	
 	public TableIF insert();
-	public TableIF addValue(List<String> values);
-	public TableIF addValue(String value);
+	public TableIF addValue(List<AttributeIF> values);
+	public TableIF addValue(AttributeIF value);
 	
 	
 
